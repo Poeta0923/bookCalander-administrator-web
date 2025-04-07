@@ -3,6 +3,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 
 //세션 저장소 관련 설정. mariadb npm 패키지는 정상 작동하지 않는 경우가 많아 express-mysql-session 사용
+//정보 기입은 추후 로컬에 mariadb 다운로드받은 뒤 테스트할 때 기입할 예정
 var MySqlStore = require('express-mysql-session')(session);
 var options = {
     host : '',
@@ -15,7 +16,7 @@ var sessionStore = new MySqlStore(options)
 //세션 관련 설정
 const app = express();
 app.use(session({
-    secret : 'a9b2c1d4e3f6g8h7i0j9k8l1m2n3o4p5q6r7s8t9u0v1w2x3y4z5!@#$%^&*()_+=-`~[]{}\|;,./<>?',
+    secret : 'not decided yet',
     resave : false,
     saveUninitialized : true,
     store : sessionStore
