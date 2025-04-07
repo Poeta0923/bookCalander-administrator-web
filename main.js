@@ -13,7 +13,7 @@ var options = {
 };
 var sessionStore = new MySqlStore(options)
 
-//세션 관련 설정
+//세션 관련 설정. 세션 비밀 키는 깃허브 repository가 public이라 미기입
 const app = express();
 app.use(session({
     secret : 'not decided yet',
