@@ -1,7 +1,77 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  min-height: 100hv;
+}
+
+.sidebar-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.sidebar-icon {
+  background-color: #f0f0f0;
+  padding: 10px; /* 패딩 값 조정 (버튼 크기에 맞게) */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none; /* 테두리 제거 (버튼 형태 강조) */
+  outline: none; /* 포커스 시 외곽선 제거 (선택 사항) */
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* 사이드바와의 간격 조절 */
+}
+
+.sidebar-icon span {
+  font-size: 24px; /* 아이콘 크기 유지 또는 조정 */
+  color: #555; /* 아이콘 색상 유지 */
+}
+
+.sidebar {
+  background-color: #191970;
+  color: white;
+  width: 0; /* 초기 너비 0으로 설정하여 숨김 */
+  overflow-x: hidden; /* 내용이 넘칠 때 숨김 */
+  transition: width 0.3s ease-in-out; /* 부드러운 애니메이션 효과 */
+}
+
+.sidebar.open {
+  width: 200px; /* 펼쳐졌을 때 너비 */
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li a {
+  display: block;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar li a:hover {
+  background-color: #555;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
 .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-  }
+  font-size: inherit; /* 상속된 font-size 사용 */
+  color: inherit; /* 상속된 color 사용 */
+}

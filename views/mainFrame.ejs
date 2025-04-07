@@ -9,6 +9,39 @@
         <!--jQuery 연결 태그는 추후 필요 시 추가-->
     </head>
     <body>
-        
+        <div class="sidebar-container">
+            <!--사이드바 영역-->
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h3>bookCalander</h3>
+                    <ul>
+                        <li><a href="#">회원 관리</a></li>
+                        <li><a href="#">게시물 관리</a></li>
+                        <li><a href="#">댓글 관리</a></li>
+                        <li><a href="#">통계 확인</a></li>
+                        <li><a href="#">AI 관리</a></li>
+                        <li><a href="#">신고내역 관리</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <!--메인 컨텐츠 영역-->
+            <div class="content">
+                <div class="sidebar-icon">
+                    <span class="material-symbols-outlined">menu</span>
+                </div>
+                <h1>메인 콘텐츠 영역</h1>
+                <p>사이드바 아이콘을 클릭하면 오른쪽으로 펼쳐집니다.</p>
+                <p>이 영역에 실제 웹 페이지 콘텐츠가 들어갑니다.</p>
+            </div>
+        </div>
+    
+        <script>
+            const sidebarIcon = document.querySelector('.sidebar-icon');
+            const sidebar = document.querySelector('.sidebar');
+    
+            sidebarIcon.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+        </script>
     </body>
 </html>
