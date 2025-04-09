@@ -1,8 +1,6 @@
 body {
   font-family: sans-serif;
   margin: 0;
-  /* .sidebar-container가 레이아웃을 처리하므로 제거 */
-  /* min-height: 100vh; */ /* .sidebar-container로 이동 */
 }
 
 .sidebar-container {
@@ -20,11 +18,9 @@ body {
   justify-content: center;
   border: none;
   outline: none;
-  width: 30px;  /* 클릭 편의를 위해 크기를 약간 키우는 것 고려 */
-  height: 30px; /* 클릭 편의를 위해 크기를 약간 키우는 것 고려 */
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
-  /* 선택 사항: 사이드바가 닫혔을 때 필요하면 margin-left 추가 */
-  /* margin-left: 10px; */
   z-index: 10; /* 사이드바 내용보다 위에 오도록 설정 (메뉴 버튼이 가려지지 않게) */
   position: relative; /* z-index 적용을 위해 필요 */
 }
@@ -35,7 +31,6 @@ body {
   color: #555;
 }
 
-/* ... 기존 CSS 코드 ... */
 
 .sidebar {
   background-color: #191970;
@@ -47,7 +42,6 @@ body {
   position: relative; /* 추가: position 기준점 설정 */
 }
 
-/* ... 기존 CSS 코드 ... */
 
 .sidebar-footer {
   background-color: #0B0B45;
