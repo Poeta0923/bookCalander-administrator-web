@@ -1,0 +1,42 @@
+<table class="table table-bordered border-primary table-hover" style="text-align: center;">
+
+    <h1><br>회원 관리</h1>
+  
+    <% if(member.length !== 0){ %>
+  
+    <thead class="table-primary">
+      <tr>
+        <th>nickName</th>
+        <th>password</th>
+        <th>birth</th>
+        <th>phoneNumber</th>
+        <th>genre</th>
+        <th>job</th>
+        <th>completion</th>
+        <th>rank</th>
+        <th>삭제</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% var i = 0;
+          while(i<member.length){ %>
+      <tr>
+        <td><%= member[i].nickName %></td>
+        <td><%= member[i].password %></td>
+        <td><%= member[i].birth %></td>
+        <td><%= member[i].phoneNumber %></td>
+        <td><%= member[i].genre %></td>
+        <td><%= member[i].job %></td>
+        <td><%= member[i].completion %></td>
+        <td><%= member[i].rank %></td>
+        <td><a href="/member/delete/<%= member[i].memberId %>" style="text-decoration: none;">삭제</a></td>
+      </tr>
+      <% i = i + 1;} %>
+    </tbody>
+  
+    <% } else { %>
+    </table>
+    <p>자료가 없습니다.</p>
+    <% } %>
+  </table>
