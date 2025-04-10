@@ -1,6 +1,3 @@
-<!--bootstrap의 테이블 스타일 설정 및 적용-->
-<table class="table table-bordered border-primary table-hover" style="text-align: center;">
-
     <h1><br>회원 관리</h1>
   
     <!--member 테이블 조회 결과 항목이 존재할 경우 테이블 표시-->
@@ -13,6 +10,9 @@
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
   
+    <!--bootstrap의 테이블 스타일 설정 및 적용-->
+    <table class="table table-bordered border-primary table-hover" style="text-align: center;">
+
     <!--테이블 항목 <th> 태그는 항목 명-->  
     <thead class="table-primary">
       <tr>
@@ -30,8 +30,10 @@
   
     <!--<tr> 태그는 행, <td> 태그는 데이터. member.js에서 context로 전달된 member 테이블의 요소들을 데이터가 끝날 때까지 삽입-->
     <tbody>
-      <% var i = 0;
-          while(i<member.length){ %>
+      <!--페이징 기능 로직-->
+      <% var start = 10 * (currentPage - 1);
+      var end = Math.min(start + columns, member.length);
+      for(var i = start; i < end; i++){ %>
       <tr>
         <td><%= member[i].nickName %></td>
         <td><%= member[i].password %></td>
@@ -45,12 +47,22 @@
         <!--해당 행의 회원 삭제 요청 버튼. primary key로 지정된 memberId를 전달-->
         <td><a href="/member/delete/<%= member[i].memberId %>" style="text-decoration: none;">삭제</a></td>
       </tr>
-      <% i = i + 1;} %>
+      <% } %>
     </tbody>
-  
-    <!--회원 테이블에 데이터가 없을 경우 출력-->
-    <% } else { %>
-    </table>
-    <p>자료가 없습니다.</p>
-    <% } %>
   </table>
+
+      <!--회원 관리 화면 현재 페이지와 다른 페이지들 표시-->
+      <% var k = 1; 
+      while(k <= pageNum){ 
+        if(k == currentPage){%>
+        <span style="font-weight : bold;"><%=k%></span> &nbsp;&nbsp;
+      <% } else { %>
+        <span><a href="/member/<%=k%>"><%=k%></a></span> &nbsp;&nbsp;
+      <% } %>
+      <% k = k + 1;} %>
+    
+      <!--회원 테이블에 데이터가 없을 경우 출력-->
+      <% } else { %>
+      </table>
+      <p>자료가 없습니다.</p>
+      <% } %>

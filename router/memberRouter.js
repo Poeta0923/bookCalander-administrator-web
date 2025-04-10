@@ -4,7 +4,7 @@ const router = express.Router();
 var member = require('../lib/member');
 
 //회원 관리 화면 요청 라우팅
-router.get('/', (req, res)=>{
+router.get('/:currentPage', (req, res)=>{
     member.view(req, res);
 })
 
