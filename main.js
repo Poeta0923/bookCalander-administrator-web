@@ -52,4 +52,4 @@ app.use('/reportedComment', reportedCommentRouter);*/
 app.get('/favicon.ico', (req, res)=>res.writeHead(404));
 
 //포트 번호는 수정 예정. callback 함수는 개발 이후에도 로깅을 위해 남겨둘 예정
-app.listen(3000, ()=>console.log('Example app listening on port 3000'))
+app.listen(3000, ()=>console.log('Example app listening on port 3000'));
