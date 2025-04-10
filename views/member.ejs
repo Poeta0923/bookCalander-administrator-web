@@ -1,9 +1,12 @@
+<!--bootstrap의 테이블 스타일 설정 및 적용-->
 <table class="table table-bordered border-primary table-hover" style="text-align: center;">
 
     <h1><br>회원 관리</h1>
   
+    <!--member 테이블 조회 결과 항목이 존재할 경우 테이블 표시-->
     <% if(member.length !== 0){ %>
   
+    <!--테이블 항목 <th> 태그는 항목 명-->  
     <thead class="table-primary">
       <tr>
         <th>nickName</th>
@@ -18,6 +21,7 @@
       </tr>
     </thead>
   
+    <!--<tr> 태그는 행, <td> 태그는 데이터. member.js에서 context로 전달된 member 테이블의 요소들을 데이터가 끝날 때까지 삽입-->
     <tbody>
       <% var i = 0;
           while(i<member.length){ %>
@@ -30,11 +34,14 @@
         <td><%= member[i].job %></td>
         <td><%= member[i].completion %></td>
         <td><%= member[i].rank %></td>
+
+        <!--해당 행의 회원 삭제 요청 버튼. primary key로 지정된 memberId를 전달-->
         <td><a href="/member/delete/<%= member[i].memberId %>" style="text-decoration: none;">삭제</a></td>
       </tr>
       <% i = i + 1;} %>
     </tbody>
   
+    <!--회원 테이블에 데이터가 없을 경우 출력-->
     <% } else { %>
     </table>
     <p>자료가 없습니다.</p>

@@ -1,12 +1,22 @@
 <h1><br>로그인</h1>
+
+<!--<form action> 태그로 post 방식 login 요청-->
 <form action="/login" method="post">
+
+    <!--사용자에게 ID를 전달받아 body에 포함하여 서버에 post 방식으로 전송-->
     <div class="mb-3">
         <label class="form-label" for="nockName">ID</label>
+
+        <!--ID를 전달받은 뒤, name 속성값을 key로 하여 서버에 전달-->>
         <input class="form-control" type="text" name="nickName" id="nickName" style="width:300px;"/>
     </div>
     <div class="mb-3">
         <label class="form-label" for="password">PW</label>
+
+        <!--password를 전달받은 뒤, name 속성값을 key로 하여 서버에 전달-->>
         <input class="form-control" type="password" name="password" id="password" style="width:300px;"/>
     </div>
+
+    <!--제출 버튼-->
     <button class="btn btn-outlined-secondary btn-sm" type="submit">login</button>
 </form>
