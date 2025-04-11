@@ -14,7 +14,7 @@ router.get('/delete/:memberId', (req, res)=>{
 })
 
 //회원 검색란에 정보 기입 후 검색버튼 클릭 시 요청 라우팅
-router.post('/search', (req, res)=>{
+router.post('/search/:currentPage', (req, res)=>{
     member.search(req, res);
 })
 
