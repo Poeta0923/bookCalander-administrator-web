@@ -30,8 +30,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 const rootRouter = require('./router/rootRouter');
 var memberRouter = require('./router/memberRouter');
-/* var postRouter = require('./router/postRouter');
-var commentRouter = require('./router/commentRouter');
+var postRouter = require('./router/postRouter');
+/* var commentRouter = require('./router/commentRouter');
 var satisticsRouter = require('./router/satisticsRouter');
 var aiRouter = require('./router/aiRouter');
 var reportedPostRouter = require('./router/reportedPostRouter');
@@ -42,8 +42,8 @@ app.use(express.static('public'));
 
 app.use('/', rootRouter);
 app.use('/member', memberRouter);
-/* app.use('/post', postRouter);
-app.use('/comment', commentRouter);
+app.use('/post', postRouter);
+/* app.use('/comment', commentRouter);
 app.use('/satistics', satisticsRouter);
 app.use('/ai', aiRouter);
 app.use('/reportedPost', reportedPostRouter);
