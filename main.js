@@ -1,6 +1,7 @@
 const express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
+const logger = require('./lib/logger');
 
 //세션 저장소 관련 설정. mariadb npm 패키지는 정상 작동하지 않는 경우가 많아 express-mysql-session 사용
 //추후 서버에서 테스트 시 정보 변경 예정
@@ -51,5 +52,8 @@ app.use('/reportedComment', reportedCommentRouter);*/
 //favicon 파일이 없기 때문에 브라우저가 요청 시 에러 처리.
 app.get('/favicon.ico', (req, res)=>res.writeHead(404));
 
-//포트 번호는 수정 예정. callback 함수는 개발 이후에도 로깅을 위해 남겨둘 예정
-app.listen(3000, ()=>console.log('Example app listening on port 3000'));
+//포트 번호는 수정 예정. callback 함수는 개발 이후에도 로깅과 디버깅을 위해 남겨둘 예정
+app.listen(3000, ()=>{
+    logger.info(`Server listening on port 3000`);
+    console.log('Example app listening on port 3000');
+});
