@@ -23,7 +23,7 @@ app.use(session({
     store : sessionStore
 }));
 
-//ejs 파일들 관련 설정
+//ejs 파일들 관련 설정 (아래의 주석처리는 개발할 때 빼오기)
 app.set('views',__dirname+'/views');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
