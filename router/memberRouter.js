@@ -23,4 +23,16 @@ router.post('/search/:currentPage', (req, res)=>{
     member.search(req, res);
 })
 
+//관리자 생성 화면 요청 라우팅
+router.get('/member/newAdmin', (req, res)=>{
+    logger.info(`GET /member/newAdmin`);
+    member.newAdmin(req, res);
+})
+
+//관리자 생성 요청 라우팅
+router.post('/member/newAdmin/create_process', (req, res)=>{
+    logger.info(`POST /member/newAdmin/create_process`);
+    member.create_process(req, res);
+})
+
 module.exports=router;
